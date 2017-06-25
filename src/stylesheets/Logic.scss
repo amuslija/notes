@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$background-gray: #FAFAFA;
+$background-blue: #039BE5;
+$button-color: #2196F3;
+
+$roboto: 'Roboto', serif;
+
+@mixin centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Login {
+  font-family: $roboto;
+  position: relative;
+  .title {
+    font: {
+      size: 750%;
+    }
+    color: $background-blue;
+    margin-top: 15%;
+    @include centering;
+  }
+
+  .login-form {
+    @include centering;
+    margin-top: 25%;
+    input {
+      font: {
+        size: 100%;
+        family: $roboto;
+      }
+      padding: 20px;
+      margin-left: 10px;
+      border: 0;
+    }
+
+    input[type='submit'] {
+      width: 150px;
+      background-color: $background-blue;
+    }
+  }
+}

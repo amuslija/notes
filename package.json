@@ -17,7 +17,9 @@
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "node-sass-chokidar": "0.0.3",
     "node-uuid": "^1.4.8",
+    "npm-run-all": "^4.0.2",
     "react-scripts": "1.0.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
@@ -25,8 +27,11 @@
     "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/stylesheets -o src/stylesheets/css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/stylesheets -o src/stylesheets/css --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

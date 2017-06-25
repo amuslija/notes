@@ -5,6 +5,8 @@ import Login from './components/Login.jsx';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store/';
 
+import './stylesheets/css/main.css';
+
 ReactDOM.render(
   <Provider store={store}>
   <Login/>

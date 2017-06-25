@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { userLogin } from '../actions/loginActions';
+import '../stylesheets/css/Logic.css';
 
 class Login extends Component {
 
@@ -16,19 +17,13 @@ class Login extends Component {
   render() {
     console.log(this.props.auth);
     return (
-      <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input type='text' name='username' ref='username'/>
-          <input type='password' name='password' ref='password'/>
+      <div className='Login'>
+        <h1 className='title'>Notes.</h1>
+        <form className='login-form' onSubmit={e => this.handleSubmit(e)}>
+          <input type='text' name='username' ref='username' placeholder='name@email.com'/>
+          <input type='password' name='password' ref='password' placeholder='*******'/>
           <input type='submit' value='submit'/>
         </form>
-        <div>
-          The user is
-          <b>{this.props.auth !== null
-              ? 'currently'
-              : 'not'}</b>
-          logged in.
-        </div>
       </div>
     )
   }
