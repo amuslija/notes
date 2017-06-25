@@ -9,6 +9,7 @@
 # production
 /build
 /src/stylesheets/css
+/config
 
 # misc
 .DS_Store
