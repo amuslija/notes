@@ -4,7 +4,6 @@ import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
 
 import rootReducer from '../reducers';
-
 let store = createStore(rootReducer, applyMiddleware(thunk));
 
 export const history = syncHistoryWithStore(createBrowserHistory(), store);
