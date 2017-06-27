@@ -10,6 +10,8 @@ let config = {
 };
 
 const firebase = Firebase.initializeApp(config);
+// const firebaseDb = firebase.database();
+// firebaseDb.ref('notes/').once('value').then(snapshot => snapshot.forEach(child => console.log(child.key)));
 
 export const login = (username, password) => {
   return firebase.auth().signInWithEmailAndPassword(username, password);

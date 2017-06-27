@@ -1,5 +1,4 @@
 const user = (state = {}, action) => {
-  console.log(action);
   switch (action.type) {
     case 'LOGIN_SUCCESS':
       return {
