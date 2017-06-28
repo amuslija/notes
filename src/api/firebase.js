@@ -1,5 +1,7 @@
 import Firebase from 'firebase';
 
+const FIREBASE_DB_NAME = '/notes';
+
 let config = {
   apiKey: "AIzaSyBUA-37LZjZdmTo_cKU_u3o9BvEIonisv4",
   authDomain: "notes-app-2bf03.firebaseapp.com",
@@ -9,12 +11,28 @@ let config = {
   messagingSenderId: "166830691170"
 };
 
+
 const firebase = Firebase.initializeApp(config);
-// const firebaseDb = firebase.database();
-// firebaseDb.ref('notes/').once('value').then(snapshot => snapshot.forEach(child => console.log(child.key)));
 
 export const login = (username, password) => {
   return firebase.auth().signInWithEmailAndPassword(username, password);
 };
 
+const getNotes = (firebaseNotes) => {
+  let notes = [];
+  Object.keys(firebaseNotes.val()).forEach(id => {
+    notes.push({
+      id: id,
+      text: firebaseNotes.val()[id].text
+    });
+  });
+  console.log(notes);
+  return notes;
+}
+
+export const asyncGetNotes = (database) => {
+  return new Promise((resolve, reject) => {
+    firebase.database().ref(FIREBASE_DB_NAME).on('value', rawNotes => resolve(getNotes(rawNotes)));
+  });
+}
 export default firebase;

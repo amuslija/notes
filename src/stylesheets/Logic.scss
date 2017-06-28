@@ -1,17 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import './main.scss';
 
-$background-gray: #FAFAFA;
-$background-blue: #039BE5;
-$button-color: #2196F3;
-
-$roboto: 'Roboto', serif;
-
-@mixin centering {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .Login {
   font-family: $roboto;

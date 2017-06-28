@@ -7,7 +7,7 @@ import store from './store/';
 import { history } from './store/';
 
 import Login from './containers/Login';
-import AddText from './components/AddText'
+import AddNotesBar from './containers/AddNotesBar'
 
 import './stylesheets/css/main.css';
 
@@ -15,7 +15,7 @@ const App = (
   <Provider store={store}>
     <Router history={history}>
         <Route path='/' component={Login}></Route>
-        <Route path='/notes' component={AddText}></Route>
+        <Route path='/notes' component={AddNotesBar}></Route>
     </Router>
   </Provider>
 )

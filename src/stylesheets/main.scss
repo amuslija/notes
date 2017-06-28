@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 $roboto: 'Roboto', serif;
 $background-color: #E0F2F1;
+$background-gray: #FAFAFA;
+$background-blue: #039BE5;
+$button-color: #2196F3;
+
+@mixin centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 body {
   background: $background-color;
