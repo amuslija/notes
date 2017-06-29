@@ -1,5 +1,5 @@
 import Firebase from 'firebase';
-
+import { v4 } from 'node-uuid';
 const FIREBASE_DB_NAME = '/notes';
 
 let config = {
@@ -30,9 +30,13 @@ const getNotes = (firebaseNotes) => {
   return notes;
 }
 
-export const asyncGetNotes = (database) => {
+export const asyncGetNotes = () => {
   return new Promise((resolve, reject) => {
     firebase.database().ref(FIREBASE_DB_NAME).on('value', rawNotes => resolve(getNotes(rawNotes)));
   });
+}
+
+export const postNotes = (notes) => {
+  return firebase.database.ref()
 }
 export default firebase;

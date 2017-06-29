@@ -1,0 +1,41 @@
+@import './main.scss';
+$background-purple: #D1C4E9;
+$background-navy: #7986CB;
+
+.Notes {
+  margin-left: 25px;
+  width: 300px;
+  height: 200px;
+  position: relative;
+
+  &:hover {
+    img {
+      display: block;
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    height: 25px;
+    width: 25px;
+    display: none;
+  }
+  textarea {
+    font: {
+      family: $roboto;
+      size: 25px;
+    }
+    color: $background-gray;
+    resize: none;
+    border: 0;
+    background-color: $background-navy;
+    right: 0px;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: top;
+    height: 100%;
+    width: 100%
+  }
+}

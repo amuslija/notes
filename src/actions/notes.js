@@ -1,7 +1,6 @@
 import { asyncGetNotes } from '../api/firebase';
 
 export const importNotes = (notes) => {
-  console.log(notes);
   return {
     type: 'IMPORT_NOTES',
     notes
