@@ -1,4 +1,4 @@
-import { asyncGetNotes } from '../api/firebase';
+import { asyncGetNotes, asyncCreateNotes, asyncDeleteNotes } from '../api/firebase';
 
 export const importNotes = (notes) => {
   return {
@@ -7,8 +7,9 @@ export const importNotes = (notes) => {
   }
 }
 
-export const addNotes = (text) => ({
+export const addNotes = (text, id) => ({
   type: 'ADD_NOTES',
+  id,
   text
 });
 
@@ -28,3 +29,13 @@ export const getAllNotes = () => (dispatch) => {
     dispatch(importNotes(notes));
   });
 }
+
+export const postNotes = (text) => (dispatch) => {
+  asyncCreateNotes(text).then(notes => {
+    dispatch(addNotes(notes.text, notes.id));
+  })
+}
+
+export const removeNotes = (id) => (dispatch) => (
+  asyncDeleteNotes(id).then(id => dispatch(deleteNotes(id)))
+);

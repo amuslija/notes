@@ -9,13 +9,15 @@ $background-navy: #7986CB;
   position: relative;
 
   &:hover {
-    img {
+    button {
       display: block;
     }
   }
 
-  img {
+  button {
     position: absolute;
+    background-color: none;
+    border: 0px
     right: 0px;
     top: 5px;
     height: 25px;

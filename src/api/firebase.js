@@ -36,7 +36,35 @@ export const asyncGetNotes = () => {
   });
 }
 
-export const postNotes = (notes) => {
-  return firebase.database.ref()
+export const asyncCreateNotes = (text) => {
+  const id = v4();
+  const notes = {
+    id,
+    text
+  };
+
+  return new Promise((resolve, reject) => {
+    firebase.database().ref(FIREBASE_DB_NAME + '/' + id).set({ text }, error => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(notes);
+      }
+    });
+  });
 }
+
+export const asyncDeleteNotes = (id) => {
+  return new Promise((resolve, reject) => firebase.database()
+    .ref(FIREBASE_DB_NAME)
+    .child(id)
+    .set(null, error => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(id);
+      }
+    }));
+}
+
 export default firebase;

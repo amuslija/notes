@@ -13,7 +13,7 @@ class NotesList extends Component {
     let { notes } = this.props;
     return (
       <div className='NotesList'>
-        {notes.map(note => (<Notes key={note.id} text={note.text} onDelete={() => this.props.onDelete(note.id)}/>))}
+        {notes.map(note => (<Notes key={note.id} text={note.text} id={note.id} onDelete={() => this.props.onDelete(note.id)}/>))}
       </div>
     );
   }

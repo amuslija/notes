@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
-import { getAllNotes } from '../actions/notes';
+import { getAllNotes, removeNotes } from '../actions/notes';
 import NotesList from '../components/NotesList';
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
   onLoad: getAllNotes,
-  onDelete: (id) => (console.log(id))
+  onDelete: removeNotes,
 }, dispatch);
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NotesList));
