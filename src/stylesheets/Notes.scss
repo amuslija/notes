@@ -1,12 +1,15 @@
 @import './main.scss';
 $background-purple: #D1C4E9;
 $background-navy: #7986CB;
+$background-cyan: #006064;
 
 .Notes {
   margin-left: 25px;
+  margin-bottom: 25px;
   width: 300px;
   height: 200px;
   position: relative;
+  display: inline-block;
 
   &:hover {
     button {
@@ -16,13 +19,14 @@ $background-navy: #7986CB;
 
   button {
     position: absolute;
-    background-color: none;
-    border: 0px
+    background-color: $background-blue;
+    border: 0px;
     right: 0px;
     top: 5px;
     height: 25px;
     width: 25px;
     display: none;
+    color: $background-gray;
   }
   textarea {
     font: {
@@ -32,7 +36,7 @@ $background-navy: #7986CB;
     color: $background-gray;
     resize: none;
     border: 0;
-    background-color: $background-navy;
+    background-color: $background-cyan;
     right: 0px;
     overflow: hidden;
     text-align: left;

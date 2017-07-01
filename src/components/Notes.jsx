@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import '../stylesheets/css/Notes.css';
-import wrench from '../stylesheets/images/wrench.png';
 
 class Notes extends Component {
 
   handleOnClick() {
-    let { id } = this.props;
     this.props.onDelete();
-    // console.log(this.props);
   }
 
   render() {
