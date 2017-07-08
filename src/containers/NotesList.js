@@ -5,7 +5,8 @@ import { getAllNotes, removeNotes } from '../actions/notes';
 import NotesList from '../components/NotesList';
 
 const mapStateToProps = (state) => ({
-  notes: state.notes
+  notes: state.notes,
+  token: state.user.token
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({

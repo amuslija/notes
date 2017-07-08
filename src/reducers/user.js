@@ -4,7 +4,7 @@ const user = (state = {}, action) => {
       return {
         ...state,
         username: action.username,
-        uid: action.uid,
+        token: action.token,
       }
     case 'LOGIN_FAILURE':
       return {};

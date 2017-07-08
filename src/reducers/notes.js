@@ -1,5 +1,4 @@
 const note = (state = {}, action) => {
-  // console.log(action);
   switch (action.type) {
     case 'ADD_NOTES':
       return {
@@ -17,13 +16,11 @@ const note = (state = {}, action) => {
 }
 
 export const notes = (state = [], action) => {
-  console.log(action);
   switch (action.type) {
     case 'IMPORT_NOTES':
-      console.log(action.notes);
       return [
         ...state,
-        ...action.notes,
+        ...action.notes
       ];
     case 'ADD_NOTES':
       return [

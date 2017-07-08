@@ -26,7 +26,6 @@ const getNotes = (firebaseNotes) => {
       text: firebaseNotes.val()[id].text
     });
   });
-  console.log(notes);
   return notes;
 }
 

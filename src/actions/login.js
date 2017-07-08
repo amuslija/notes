@@ -1,10 +1,10 @@
-import { login } from '../api/firebase';
+import { login } from '../api/notes-api';
 import { push } from 'react-router-redux';
 
-export const loginSuccess = (username, uid) => ({
+export const loginSuccess = (username, token) => ({
   type: 'LOGIN_SUCCESS',
   username,
-  uid
+  token
 });
 
 export const loginFailure = (message) => ({
@@ -15,7 +15,7 @@ export const loginFailure = (message) => ({
 export const asyncLogin = (username, password) => (dispatch) => {
   login(username, password)
     .then(user => {
-      dispatch(loginSuccess(user.email, user.uid));
+      dispatch(loginSuccess(user.email, user.token));
       dispatch(push('/notes'));
     })
     .catch(error => dispatch(loginFailure(error.message)));

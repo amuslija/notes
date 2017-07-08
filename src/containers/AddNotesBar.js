@@ -4,7 +4,9 @@ import { bindActionCreators } from 'redux';
 import TitleBar from '../components/TitleBar';
 import { postNotes } from '../actions/notes';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  token: state.user.token
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   postNotes

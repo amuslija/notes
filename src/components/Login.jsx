@@ -6,7 +6,6 @@ class Login extends Component {
     e.preventDefault();
     let username = this.refs.username.value;
     let password = this.refs.password.value;
-    console.log(this.props.login);
     this.props.login(username, password);
   }
 

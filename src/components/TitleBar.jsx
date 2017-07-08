@@ -5,7 +5,7 @@ class TitleBar extends Component {
 
   handleClick() {
     const text = this.refs.text.value;
-    this.props.postNotes(text);
+    this.props.postNotes(this.props.token, text);
   }
 
   render() {
